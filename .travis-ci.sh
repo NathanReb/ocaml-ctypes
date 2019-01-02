@@ -24,8 +24,7 @@ install_on_osx () {
   brew update
   brew reinstall ocaml
   brew install libffi opam
-  opam init
-  opam switch create $OCAML_VERSION
+  opam init --compiler=$OCAML_VERSION
   eval `opam env` 
 }
 
