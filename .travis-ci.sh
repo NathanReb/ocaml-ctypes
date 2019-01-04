@@ -10,12 +10,12 @@ install_on_linux () {
   sudo apt-get update -qq
   if test $use_opam; then
       sudo apt-get install -qq opam
-      opam init --compiler $OCAML_VERSION
+      opam init --compiler=$OCAML_VERSION
   else
       sudo apt-get install -qq ocaml ocaml-native-compilers opam
       opam init
   fi
-  eval `opam config env`
+  eval `opam env`
 }
 
 install_on_osx () {
