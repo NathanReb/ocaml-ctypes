@@ -1,3 +1,4 @@
+echo travis_fold:start:prepare
 ANDROID_REPOSITORY=git://github.com/whitequark/opam-cross-android
 export OCAMLFINDFLAGS
 
@@ -44,8 +45,8 @@ install_android_toolchain () {
 }
 
 export OPAMYES=1
-export OPAMVERBOSE=1
 
+echo travis_fold:end:prepare
 echo travis_fold:start:install
 echo $TRAVIS_OS_NAME
 case $ANDROID in
@@ -71,6 +72,7 @@ fi
 echo travis_fold:end:install-coverage
 
 
+export OPAMVERBOSE=1
 echo travis_fold:start:build
 opam pin add -n .
 if test $ANDROID; then
@@ -80,12 +82,11 @@ else
 fi
 echo travis_fold:end:build
 
-# Check that the inverted stubs package builds with this release
-opam pin add -n ctypes-inverted-stubs-example https://github.com/yallop/ocaml-ctypes-inverted-stubs-example.git 
-if test ! $ANDROID && test ! $COVERAGE && opam install --show-actions ctypes-inverted-stubs-example; then
-    opam install --build-test --yes ctypes-inverted-stubs-example
-else
-    echo "Pinning the inverted stubs example failed, probably due to OCaml version incompatibility"
-fi
-
+# TODO Check that the inverted stubs package builds with this release
+#opam pin add -n ctypes-inverted-stubs-example https://github.com/yallop/ocaml-ctypes-inverted-stubs-example.git 
+#if test ! $ANDROID && test ! $COVERAGE && opam install --show-actions ctypes-inverted-stubs-example; then
+#    opam install --build-test --yes ctypes-inverted-stubs-example
+#else
+#    echo "Pinning the inverted stubs example failed, probably due to OCaml version incompatibility"
+#fi
 
