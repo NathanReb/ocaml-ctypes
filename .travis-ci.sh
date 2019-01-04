@@ -10,7 +10,7 @@ install_on_linux () {
   sudo apt-get update -qq
   if test $use_opam; then
       sudo apt-get install -qq opam
-      opam init --compiler=$OCAML_VERSION
+      opam init --compiler=ocaml-base-compiler.$OCAML_VERSION
   else
       sudo apt-get install -qq ocaml ocaml-native-compilers opam
       opam init
@@ -25,7 +25,7 @@ install_on_osx () {
   brew update
   brew reinstall ocaml
   brew install libffi opam
-  opam init --compiler=$OCAML_VERSION
+  opam init --compiler=ocaml-base-compiler.$OCAML_VERSION
   eval `opam env` 
 }
 
