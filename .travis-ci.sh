@@ -64,6 +64,8 @@ echo OPAM versions
 opam --version
 opam --git-version
 
+opam pin add dune -n https://github.com/rgrinberg/dune.git#always-print-exn
+
 echo travis_fold:start:install-coverage
 # Optional dependencies for coverage testing
 if test $COVERAGE -a $TRAVIS_OS_NAME != osx ; then
