@@ -81,6 +81,7 @@ echo travis_fold:end:install-coverage
 export OPAMVERBOSE=1
 echo travis_fold:start:build
 opam pin add -n .
+opam upgrade 
 if test $ANDROID; then
 	opam install --yes ctypes
 else
