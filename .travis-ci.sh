@@ -5,12 +5,18 @@ export OCAMLFINDFLAGS
 ppa=avsm/ppa
 use_opam=true
 
+if [ "$OCAML_VARIANT" = "" ]; then
+  OCAML_COMPILER="ocaml-base-compiler.$OCAML_VERSION"
+else
+  OCAML_COMPILER="ocaml-variants.$OCAML_VERSION+$OCAML_VARIANT"
+fi
+
 install_on_linux () {
   echo "yes" | sudo add-apt-repository ppa:$ppa
   sudo apt-get update -qq
   if test $use_opam; then
       sudo apt-get install -qq opam
-      opam init --compiler=ocaml-base-compiler.$OCAML_VERSION
+      opam init --compiler=$OCAML_COMPILER
   else
       sudo apt-get install -qq ocaml ocaml-native-compilers opam
       opam init
@@ -25,7 +31,7 @@ install_on_osx () {
   brew update
   brew reinstall ocaml
   brew install libffi opam
-  opam init --compiler=ocaml-base-compiler.$OCAML_VERSION
+  opam init --compiler=$OCAML_COMPILER
   eval `opam env` 
 }
 
