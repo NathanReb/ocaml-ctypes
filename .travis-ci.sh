@@ -5,10 +5,13 @@ export OCAMLFINDFLAGS
 ppa=avsm/ppa
 use_opam=true
 
+OCAML_COMPILER=`echo $OCAML_VERSION | awk -F+ '{print $1}'`
+OCAML_VARIANT=`echo $OCAML_VERSION | awk -F+ '{print $2}'`
+
 if [ "$OCAML_VARIANT" = "" ]; then
   OCAML_COMPILER="ocaml-base-compiler.$OCAML_VERSION"
 else
-  OCAML_COMPILER="ocaml-variants.$OCAML_VERSION+$OCAML_VARIANT"
+  OCAML_COMPILER="ocaml-variants.$OCAML_VERSION"
 fi
 
 install_on_linux () {
