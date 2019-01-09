@@ -1,8 +1,9 @@
 #!/bin/bash
 cd $(dirname $0)
-eval $(opam env)
+eval $(opam config env)
 export OPAMYES=1
 export OPAMVERBOSE=1
-opam pin add dune --dev
+git clone git://github.com/ocaml/dune
+cd dune && make && sudo make install
 dune build
 dune runtest
