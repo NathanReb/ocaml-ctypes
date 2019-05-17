@@ -42,6 +42,7 @@ let cepilogue = [
   "}";
   ]
 let mlprologue = [
+  "[@@@warning \"-9-27\"]";
   "include Ctypes";
   "let lift x = x";
   "open Ctypes_static";
