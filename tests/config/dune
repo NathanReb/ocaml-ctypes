@@ -1,0 +1,10 @@
+(executable
+ (name test_config)
+ (libraries dune.configurator))
+
+(rule
+  (targets test-cflags)
+  (deps test_config.exe)
+  (action (run %{exe:test_config.exe}
+    -integers-dir %{lib:integers:ocaml_integers.h}
+    -ctypes-dir   %{lib:ctypes:ctypes_cstubs_internals.h})))
