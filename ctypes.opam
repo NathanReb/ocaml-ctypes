@@ -25,10 +25,6 @@ the `ctypes-foreign` package.
 This will make the `ctypes-foreign` ocamlfind subpackage available.
 """
 
-pin-depends: [
-  [ "integers.dev" "git+http://github.com/yallop/ocaml-integers.git" ]
-  [ "dune.dev" "git+http://github.com/ocaml/dune.git" ]
-]
 depends: [
   "ocaml" {>= "4.02.3"}
   "integers"
