@@ -1,17 +1,12 @@
 (rule
  (with-stdout-to ctypes_primitives.ml (run ../configure/gen_c_primitives.exe)))
 
-(rule
- (targets ctypes-ldflags.sxp)
- (action (run ../configure/ctypes_flags.exe)))
-
 (library
  (name ctypes)
  (public_name ctypes)
  (wrapped false)
  (libraries bigarray bytes integers)
  (modules_without_implementation ctypes_types)
- (c_library_flags (:include ctypes-ldflags.sxp))
  (preprocess (pps bisect_ppx -conditional))
  (install_c_headers
    ctypes_raw_pointer

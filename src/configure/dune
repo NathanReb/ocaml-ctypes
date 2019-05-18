@@ -2,9 +2,3 @@
  (name gen_c_primitives)
  (libraries dune.configurator)
  (modules gen_c_primitives))
-
-
-(executable
- (name ctypes_flags)
- (libraries dune.configurator)
- (modules ctypes_flags))
