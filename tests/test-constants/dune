@@ -31,6 +31,6 @@
 (test
  (name test_constants)
  (modules test_constants)
- (libraries ounit ctypes ctypes.stubs ctypes-foreign.threaded
+ (libraries oUnit ctypes ctypes.stubs ctypes-foreign.threaded
    test_constants_stubs test_functions test_constants_bindings tests_common))
 

@@ -1,4 +1,4 @@
 (test
  (name test_array)
- (libraries ounit ctypes ctypes.stubs ctypes-foreign.threaded
+ (libraries oUnit ctypes ctypes.stubs ctypes-foreign.threaded
    test_arrays_stubs test_arrays_bindings tests_common))

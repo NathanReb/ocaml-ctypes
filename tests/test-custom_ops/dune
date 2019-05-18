@@ -1,4 +1,4 @@
 (test
  (name test_custom_ops)
- (libraries ounit ctypes)
+ (libraries oUnit ctypes)
 )
