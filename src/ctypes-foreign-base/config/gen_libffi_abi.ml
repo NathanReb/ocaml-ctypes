@@ -90,7 +90,7 @@ let () =
   let c_flags = ref "" in
   let args = ["-cflags", Arg.Set_string c_flags, "CFLAGS for libffi"] in
   C.main ~args ~name:"ctypes-ffi" (fun c ->
-    let c_flags = [!c_flags] in
+    let c_flags = match !c_flags with "" -> [] | c -> [c] in
     let defined_symbols = find_defined_symbols c c_flags in
     print_string header;
     List.iter (fun (name, symbol) -> write_line c ~c_flags ~defined_symbols ~name ~symbol) symbols
