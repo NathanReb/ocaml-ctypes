@@ -14,30 +14,30 @@ os:
   - linux
   - osx
 env:
-  - OCAML_VERSION=4.02.3 COVERAGE=true
+  - OCAML_VERSION=4.02 COVERAGE=true
 #  - OCAML_VERSION=4.02.3 ARM=true
-  - OCAML_VERSION=4.03.0
-  - OCAML_VERSION=4.04.0+flambda
+  - OCAML_VERSION=4.03
 #  - OCAML_VERSION=4.04.0+32bit ANDROID=true
-  - OCAML_VERSION=4.05.0
-  - OCAML_VERSION=4.06.1
-  - OCAML_VERSION=4.07.1
+  - OCAML_VERSION=4.05
+  - OCAML_VERSION=4.06
+  - OCAML_VERSION=4.07
+  - OCAML_VERSION=4.07+flambda
 matrix:
   exclude:
     - os: osx
-      env: OCAML_VERSION=4.02.3 ARM=true
+      env: OCAML_VERSION=4.02 ARM=true
     - os: osx
-      env: OCAML_VERSION=4.02.3 COVERAGE=true
+      env: OCAML_VERSION=4.02 COVERAGE=true
     - os: osx
-      env: OCAML_VERSION=4.03.0
+      env: OCAML_VERSION=4.03
     - os: osx
-      env: OCAML_VERSION=4.04.0+flambda
+      env: OCAML_VERSION=4.04+flambda
     - os: osx
-      env: OCAML_VERSION=4.04.0+32bit ANDROID=true
+      env: OCAML_VERSION=4.04+32bit ANDROID=true
     - os: osx
-      env: OCAML_VERSION=4.05.0
+      env: OCAML_VERSION=4.05
     - os: osx
-      env: OCAML_VERSION=4.06.1
+      env: OCAML_VERSION=4.06
 before_install:
   - if [ "${ARM}z" = "truez" ]; then
       sudo apt-get update && sudo apt-get install --yes qemu-user-static;
