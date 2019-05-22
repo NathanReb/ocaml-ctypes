@@ -6,7 +6,8 @@
 (rule
  (targets fts_stubs.c fts_generated.ml)
  (deps fts_stub_generator.exe)
- (action (run %{deps})))
+ (action
+  (run %{deps})))
 
 (library
  (name fts_generated)

@@ -7,4 +7,3 @@
  (name gen_libffi_abi)
  (modules gen_libffi_abi)
  (libraries dune.configurator))
-

@@ -6,7 +6,8 @@
 (rule
  (targets date_stubs.c date_generated.ml)
  (deps date_stub_generator.exe)
- (action (run %{deps})))
+ (action
+  (run %{deps})))
 
 (library
  (name date_generated)

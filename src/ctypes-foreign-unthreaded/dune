@@ -2,6 +2,7 @@
  (name ctypes_foreign_unthreaded)
  (public_name ctypes-foreign.unthreaded)
  (private_modules ctypes_gc_mutex)
- (preprocess (pps bisect_ppx -conditional))
+ (preprocess
+  (pps bisect_ppx -conditional))
  (implements ctypes-foreign)
  (libraries ctypes))
