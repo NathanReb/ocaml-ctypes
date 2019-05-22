@@ -1,0 +1,4 @@
+(test
+ (name test_marshal)
+ (libraries ctypes oUnit)
+ )
