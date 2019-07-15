@@ -2,17 +2,11 @@ echo travis_fold:start:prepare
 ANDROID_REPOSITORY=git://github.com/whitequark/opam-cross-android
 export OCAMLFINDFLAGS
 
-ppa=avsm/ppa
-use_opam=true
-
-OCAML_COMPILER=`echo $OCAML_VERSION | awk -F+ '{print $1}'`
-OCAML_VARIANT=`echo $OCAML_VERSION | awk -F+ '{print $2}'`
-
-if [ "$OCAML_VARIANT" = "" ]; then
-  OCAML_COMPILER="ocaml-base-compiler.$OCAML_VERSION"
-else
-  OCAML_COMPILER="ocaml-variants.$OCAML_VERSION"
-fi
+case "$OCAML_VERSION" in
+4.01.0) ppa=avsm/ppa ;;
+4.02.3) ppa=avsm/ppa ;;
+*) ppa=avsm/ppa; use_opam=true ;;
+esac
 
 install_on_linux () {
   echo "yes" | sudo add-apt-repository ppa:$ppa

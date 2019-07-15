@@ -26,10 +26,16 @@ This will make the `ctypes-foreign` ocamlfind subpackage available.
 """
 
 depends: [
-  "ocaml" {>= "4.02.3"}
-  "dune" {build}
-  "integers"
-  "bisect_ppx"
+   "ocaml" {>= "4.02.3"}
+   "dune" {>="1.7"}
+   "base-bytes"
+   "integers" { >= "0.3.0" }
+   "ocamlfind" {build}
+   "conf-pkg-config" {build}
+   "lwt" {test & >= "3.2.0"}
+   "ctypes-foreign" {test}
+   "ounit" {test}
+   "conf-ncurses" {test}
 ]
 depopts: [
   "ocveralls" {with-test}
