@@ -32,6 +32,7 @@ depends: [
   "bigarray-compat"
   "ounit" {with-test}
   "conf-fts" {with-test & os != "win32"}
+  "conf-pkg-config" {with-test}
   "odoc" {with-doc}
 ]
 build: [
