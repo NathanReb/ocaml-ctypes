@@ -8,8 +8,7 @@
 (license MIT)
 (maintainers "Jeremy Yallop <yallop@gmail.com>")
 (authors "Jeremy Yallop")
-(source (github ocamllabs/ocaml-ctypes))
-(documentation "https://ocamllabs.github.io/ocaml-ctypes/")
+(source (github dune-universe/ocaml-ctypes))
 
 (package
  (name ctypes)

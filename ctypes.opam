@@ -22,9 +22,8 @@ maintainer: ["Jeremy Yallop <yallop@gmail.com>"]
 authors: ["Jeremy Yallop"]
 license: "MIT"
 tags: ["org:mirage" "org:ocamllabs"]
-homepage: "https://github.com/ocamllabs/ocaml-ctypes"
-doc: "https://ocamllabs.github.io/ocaml-ctypes/"
-bug-reports: "https://github.com/ocamllabs/ocaml-ctypes/issues"
+homepage: "https://github.com/dune-universe/ocaml-ctypes"
+bug-reports: "https://github.com/dune-universe/ocaml-ctypes/issues"
 depends: [
   "dune" {>= "2.8"}
   "ocaml" {>= "4.03.0"}
@@ -49,4 +48,4 @@ build: [
     "@doc" {with-doc}
   ]
 ]
-dev-repo: "git+https://github.com/ocamllabs/ocaml-ctypes.git"
+dev-repo: "git+https://github.com/dune-universe/ocaml-ctypes.git"
