@@ -1,0 +1,13 @@
+(test
+ (name test_foreign_values)
+ (package ctypes-foreign)
+ (link_flags
+  (:include ../flags/link-flags.sexp))
+ (libraries
+  oUnit
+  ctypes
+  ctypes.stubs
+  ctypes-foreign
+  test_foreign_values_stubs
+  test_foreign_values_bindings
+  tests_common))

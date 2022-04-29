@@ -1,0 +1,14 @@
+(test
+ (name test_array)
+ (package ctypes-foreign)
+ (link_flags
+  (:include ../flags/link-flags.sexp))
+ (libraries
+  oUnit
+  ctypes
+  ctypes.stubs
+  ctypes-foreign
+  test_arrays_stubs
+  test_arrays_bindings
+  tests_common
+  stdlib-shims))
